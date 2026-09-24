@@ -7,4 +7,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 29519
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:29519"]
+# 启动前自动建表并在空库时播种一场可直接开跑的赛事
+CMD ["sh", "-c", "python manage.py migrate --noinput && python manage.py seed_race && gunicorn config.wsgi:application --bind 0.0.0.0:29519"]
+

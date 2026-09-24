@@ -6,4 +6,5 @@ __pycache__
 *.pyc
 .pytest_cache
 *.log
+db.sqlite3
 .DS_Store

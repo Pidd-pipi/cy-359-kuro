@@ -162,3 +162,82 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.brand-sub {
+  font-size: 0.62em;
+  font-weight: 600;
+  color: color-mix(in srgb, #271d1a 65%, #b14f3b 35%);
+}
+
+.race-hero {
+  margin-bottom: 22px;
+}
+
+.race-shell {
+  border: 1px solid color-mix(in srgb, #271d1a 13%, transparent);
+  background: color-mix(in srgb, #f8f1ec 86%, white 14%);
+  box-shadow: 0 18px 50px color-mix(in srgb, #271d1a 10%, transparent);
+  border-radius: 8px;
+  padding: clamp(16px, 3vw, 28px);
+}
+
+.race-header {
+  border-bottom: 1px dashed color-mix(in srgb, #271d1a 22%, transparent);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+}
+
+.race-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.race-grid .ant-card {
+  height: 100%;
+}
+
+.member-editor {
+  border: 1px dashed color-mix(in srgb, #271d1a 22%, transparent);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: color-mix(in srgb, #b14f3b 4%, transparent);
+}
+
+.member-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 800;
+  background: color-mix(in srgb, #271d1a 8%, transparent);
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  background: color-mix(in srgb, #f8f1ec 70%, white 30%);
+}
+
+@media (max-width: 900px) {
+  .race-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

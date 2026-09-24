@@ -7,6 +7,8 @@ DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
+    "django.contrib.contenttypes",
+    "django.contrib.auth",
     "rest_framework",
     "domain",
 ]
@@ -23,12 +25,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 if os.getenv("DB_HOST"):
     DATABASES = {
         "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-        "NAME": os.getenv("DB_NAME", "app"),
-        "USER": os.getenv("DB_USER", "app"),
-        "PASSWORD": os.getenv("DB_PASSWORD", "app_pwd"),
+            "ENGINE": "django.db.backends.postgresql",
+            "HOST": os.getenv("DB_HOST"),
+            "PORT": os.getenv("DB_PORT", "5432"),
+            "NAME": os.getenv("DB_NAME", "app"),
+            "USER": os.getenv("DB_USER", "app"),
+            "PASSWORD": os.getenv("DB_PASSWORD", "app_pwd"),
         }
     }
 else:
@@ -42,3 +44,8 @@ else:
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ()
 }
+
+LANGUAGE_CODE = "zh-hans"
+TIME_ZONE = "Asia/Shanghai"
+USE_I18N = True
+USE_TZ = True
