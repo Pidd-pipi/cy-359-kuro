@@ -7,3 +7,6 @@ __pycache__
 .pytest_cache
 *.log
 .DS_Store
+
+# SQLite 本地开发库（容器使用 PostgreSQL）
+db.sqlite3

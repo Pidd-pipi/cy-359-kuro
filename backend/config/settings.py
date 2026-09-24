@@ -8,7 +8,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "rest_framework",
-    "domain",
+    "domain.apps.DomainConfig",
 ]
 
 MIDDLEWARE = [
@@ -20,15 +20,20 @@ ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# 全部时间以 Asia/Shanghai 展示（数据库仍存 UTC，接口返回带时区 ISO8601）
+TIME_ZONE = "Asia/Shanghai"
+USE_TZ = True
+LANGUAGE_CODE = "zh-hans"
+
 if os.getenv("DB_HOST"):
     DATABASES = {
         "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-        "NAME": os.getenv("DB_NAME", "app"),
-        "USER": os.getenv("DB_USER", "app"),
-        "PASSWORD": os.getenv("DB_PASSWORD", "app_pwd"),
+            "ENGINE": "django.db.backends.postgresql",
+            "HOST": os.getenv("DB_HOST"),
+            "PORT": os.getenv("DB_PORT", "5432"),
+            "NAME": os.getenv("DB_NAME", "app"),
+            "USER": os.getenv("DB_USER", "app"),
+            "PASSWORD": os.getenv("DB_PASSWORD", "app_pwd"),
         }
     }
 else:
